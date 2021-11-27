@@ -154,26 +154,26 @@ def train(cfg):
 if __name__ == "__main__":
     class CFG:
         def __init__(self):
-            self.root_path = r"E:\code\dataset\faces\faces"
-            self.img_size = 96
+            self.root_path = r"E:\code\dataset\faces\faces"      # 数据集存放路径
+            self.img_size = 96  # 图片尺寸
             self.batch_size = 256
             self.CUDA = "0"
-            self.output_dir = r"output/exp1"
+            self.output_dir = r"output/exp1"    # 输出目录
 
             # model set
-            self.input_size = 100
-            self.ndg = 64
-            self.ndf = 64
-            self.out_channels = 3
-            self.lr_g = 2e-4
-            self.lr_d = 2e-4
+            self.input_size = 100   # 噪声维度
+            self.ndg = 64   # 判别器feature map数
+            self.ndf = 64   # 生成器feature map数
+            self.out_channels = 3   # 图片通道数
+            self.lr_g = 2e-4    # 生成器的学习率
+            self.lr_d = 2e-4    # 判别器的学习率
 
             # train
-            self.epochs = 20
-            self.d_item = 1
-            self.g_item = 1
-            self.show_item = 50
-            self.resume = False
+            self.epochs = 20    # 训练轮数
+            self.d_item = 1     # 每1个batch训练一次判别器
+            self.g_item = 1     # 每1个batch训练一次生成器
+            self.show_item = 50     # 隔多少个batch生成一次示例图
+            self.resume = False     # 是否断点续训
 
 
     cfg = CFG()
